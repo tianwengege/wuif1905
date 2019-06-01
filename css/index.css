@@ -92,8 +92,14 @@ h1{
     background: lightblue;
     float: left;
     margin: 0 auto;
+    overflow: hidden;
 }
 .bannerImg li{
+    position: absolute;
+    left: 620px;
+    top: 0;
+}
+.bannerImg li:first-child{
     position: absolute;
     left: 0;
     top: 0;
@@ -113,9 +119,11 @@ h1{
 }
 .leftBtn{
     left: 50px;
+    z-index: 9999;
 }
 .rightBtn{
     right: 50px;
+    z-index: 9999;
 }
 .btnList{
     width: 96px;
@@ -126,6 +134,11 @@ h1{
     right: 0;
     margin-left: auto;
     margin-right: auto;
+    z-index: 9999;
+    transition:  5ms;
+}
+.btnList .hot{
+    background: #00c1de;
 }
 .btnList li {
     border-radius: 50%;
@@ -250,7 +263,6 @@ a.iconfont.icon-weixin {
 }
 
 
-
 /*diary*/
 .diary{
     width: 1200px;
@@ -358,10 +370,10 @@ a.iconfont.icon-weixin {
 .diaryTab ul li:first-child i {
     background: #222;
 }
-.tabList li:nth-child(1) {
-    height: 36%;
-    background: #f7f7f7;
-}
+/*.tabList li:nth-child(1) {*/
+/*    height: 36%;*/
+/*    background: #f7f7f7;*/
+/*}*/
 .tabList li {
     overflow: hidden;
     line-height: 32px;
@@ -780,7 +792,7 @@ a.iconfont.icon-weixin {
     float: right;
     background: #e4e3e3;
 }
-/*512 40+20+110+28 40*7 */
+
 .rightFirst{
     height: 512px;
     background: #e4e3e3;
@@ -842,7 +854,7 @@ a.iconfont.icon-weixin {
     height: 16px;
     background: #B1B1B1;
     float: left;
-    margin-top: 8px;
+    margin-top: 3px;
     margin-right: 10px;
     position: relative;
     font-style: normal;
