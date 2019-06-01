@@ -8,6 +8,20 @@ window.onload = function () {
         home.style.color='#fff';
     }
 
+    let diaryList=document.querySelectorAll('.diaryList>li');
+    for(var i=0;i<diaryList.length;i++) {
+        diaryList[i].onclick = (function (i) {
+            return function () {
+                for (let j = 0; j < tabList.length; j++) {
+                    diaryList[j].classList.remove('hot');
+                }
+                diaryList[i].classList.add('hot');
+            }
+        })(i)
+    }
+
+
+
     let btnList=document.getElementsByClassName('btnList');
     let bannerPoint=btnList[0].getElementsByTagName('li');
 
@@ -28,7 +42,7 @@ window.onload = function () {
                 }
                     tabList[i].classList.add( 'hot');
             }
-        })(i)
+        })(i);
         tabList[i].onmouseleave=(function (i) {
             return function () {
                 for(let j=0;j<tabList.length;j++){

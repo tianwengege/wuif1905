@@ -11,14 +11,14 @@ window.onload = function () {
     let btnList=document.getElementsByClassName('btnList');
     let bannerPoint=btnList[0].getElementsByTagName('li');
 
-    // for(let i=0;i<bannerPoint.length;i++){
-    //     bannerPoint[i].onmouseenter=function () {
-    //         this.style.backgroundColor='#00c1de';
-    //     }
-    //     bannerPoint[i].onmouseleave=function () {
-    //         this.style.backgroundColor='#fff';
-    //     }
-    // }
+    for(let i=0;i<bannerPoint.length;i++){
+        bannerPoint[i].onmouseenter=function () {
+            this.style.backgroundColor='#00c1de';
+        }
+        bannerPoint[i].onmouseleave=function () {
+            this.style.backgroundColor='#fff';
+        }
+    }
     let tabList=document.querySelectorAll('.tabList > li' );
     for(var i=0;i<tabList.length;i++){
         tabList[i].onmouseenter=(function (i) {
