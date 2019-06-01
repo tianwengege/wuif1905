@@ -48,14 +48,6 @@ window.onload = function () {
     let flag=true;
 
 
-    rightBtn.onmouseenter=function () {
-            this.style.backgroundColor='#00c1de';
-        }
-    rightBtn.onmouseleave=function () {
-            this.style.backgroundColor='#fff';
-        }
-
-
 
     rightBtn.onclick=function () {
         if (!flag) {
