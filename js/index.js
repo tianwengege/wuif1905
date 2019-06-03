@@ -136,7 +136,40 @@ window.onload = function () {
             current=next;
         }
     }
+// 加载
+    let viewH=window.innerHeight;
+    let imgs=document.querySelectorAll('.lazyload');
+    let positionArr=[];
+    imgs.forEach(function (ele) {
+        let t = ele.offsetTop;
+        let parent=ele.offsetParent;
+        t += parent.offsetTop;
 
+        while (parent.nodeName.toLowerCase()!=="body") {
+            parent = parent.offsetParent;
+            t+=parent.offsetTop;
+        }
+        // console.dir(parent.nodeName.toLowerCase());
+        // console.log(ele.offsetTop);
+        positionArr.push(t);
+    });
+    // console.log(positionArr);
+    window.onscroll = function () {
+        let scrolltop = document.documentElement.scrollTop || document.body.scrollTop;
+        for (let i=0;i<positionArr.length;i++){
+            // console.log(viewH);
+            // console.log(scrolltop);
+            // console.log(positionArr[i]);
+            // console.log('-----');
+            if (scrolltop + viewH >= positionArr[i]+50){
+                if (!imgs[i].src){
+                    imgs[i].src=imgs[i].getAttribute('aa');
+                }
+
+            }
+        }
+
+    }
 
 
 

@@ -28,7 +28,7 @@ window.onload = function () {
                 }
                 tabList[i].classList.add( 'hot');
             }
-        })(i)
+        })(i);
         tabList[i].onmouseleave=(function (i) {
             return function () {
                 for(let j=0;j<tabList.length;j++){
